@@ -1,7 +1,7 @@
 import { HttpHandlerFn, HttpRequest } from "@angular/common/http";
 
 
-export function AuthInterceptor(request:HttpRequest<unknown>, next:HttpHandlerFn) {
+export function authInterceptor(request:HttpRequest<unknown>, next:HttpHandlerFn) {
 
 
     const token = localStorage.getItem('authToken')
@@ -14,7 +14,6 @@ export function AuthInterceptor(request:HttpRequest<unknown>, next:HttpHandlerFn
         headers: request.headers.append('Authorization',`Bearer ${token}`)
     })
 
-    next(newRequest);
+    return next(newRequest)
     
-
 }
