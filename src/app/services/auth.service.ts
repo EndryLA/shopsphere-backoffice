@@ -12,7 +12,7 @@ export class AuthService {
     private http:HttpClient = inject(HttpClient);
 
     login(email:string, password:string){
-        this.http.get<string>(`${this.apiUrl}/auth/login`).subscribe({
+        this.http.post<string>(`${this.apiUrl}/auth/login`,{email,password}).subscribe({
             next:(response:any) => {
                 localStorage.setItem('authToken',response.token)
             }, 
