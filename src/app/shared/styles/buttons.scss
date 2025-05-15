@@ -1,0 +1,101 @@
+.btn {
+    background-color: unset;
+    border: none;
+    outline:none;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+}
+
+.btn-rounded {
+    background-color: unset;
+    border: none;
+    outline:none;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    border-radius:8px;
+}
+
+.btn-medium {
+    width:140px;
+    font-size:16px;
+    padding:10px;
+}
+
+.btn-lg {
+    width:280px;
+    font-size:18px;
+    padding:12px;
+}
+
+.btn-xxl {
+    width:400px;
+    padding:16px;
+    font-size:20px;
+}
+
+.btn-primary {
+    background-color: black;
+    color:white;
+    border:2px solid black;
+    transition:.2s;
+
+    &:hover {
+        background-color: transparent;
+        color:black;
+    }
+}
+
+.btn-swiper {
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,1);
+    border-radius:50%;
+    padding:10px;
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+    transition:.3s;
+
+    img {
+        width:18px;
+    }
+
+    &:hover {
+    background-color: rgba(0,0,0,.8);
+
+    }
+}
+
+.btn-read-more {
+    outline:none;
+    border:none;
+    margin:none;
+    padding:none;
+    background-color: transparent;
+    text-decoration:underline;
+    padding:0;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:500;
+    font-style:italic;
+    display:flex;
+    align-items: center;
+    transition:.2s;
+
+   img {
+    padding-top:3px;
+    button img {
+        filter: brightness(0);
+    }
+   }
+
+   &:hover {
+    transform: translate(4px);
+
+    
+    
+
+   }
+
+}

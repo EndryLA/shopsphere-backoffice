@@ -6,10 +6,8 @@ export const adminGuard = () => {
 
     const authService = inject(AuthService)
     
-    if (authService.getRole() !== 'ROLE_ADMIN') {
-        return false;
-    }
+    const authorities = authService.getRole();
 
-    return true;
-
+    return (authorities.includes('ROLE_ADMIN'))
+     
 }
