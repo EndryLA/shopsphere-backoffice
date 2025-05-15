@@ -1,0 +1,17 @@
+<div class="login-container">
+    <h1>Connexion</h1>
+    <form [formGroup]="loginForm" (submit)="login()">
+        <div  class="form-field"  >
+            <label for="email">Adresse mail</label>
+            <input name="password" type="email" required formControlName="email">
+        </div>
+        
+        <div class="form-field">
+            <label for="password">Mot de passe</label>
+            <input name="password" type="password" required formControlName="password">
+        </div>
+        
+        <button class="btn btn-primary btn-medium" type="submit">Se connecter</button>
+    </form>
+
+</div>
