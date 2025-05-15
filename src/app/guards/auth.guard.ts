@@ -9,7 +9,7 @@ export const  authGuard = () => {
     const router = inject(Router)
 
     if (authService.getToken() === null) {
-        router.navigateByUrl('login')
+        router.navigateByUrl('connexion')
         return false
     }
 

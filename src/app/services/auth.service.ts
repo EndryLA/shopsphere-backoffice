@@ -29,21 +29,6 @@ export class AuthService {
         return localStorage.getItem('authToken')
     }
 
-    isTokenExpired() {
-
-        const token = this.getToken()
-
-        if (token != null) {
-            
-            const expirationDate = jwtDecode<any>(token).exp * 1000
-            const currentTime = Date.now()
-
-            return expirationDate < currentTime
-        }
-
-        return true;
-    }
-
     isAuthenticated() {
 
         const token = this.getToken()
