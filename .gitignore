@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 
 /src/environments
+/src/app/pages/admin-test-page
+
