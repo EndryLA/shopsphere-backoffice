@@ -29,21 +29,6 @@ export class AuthService {
         return localStorage.getItem('authToken')
     }
 
-    isTokenExpired() {
-
-        const token = this.getToken()
-
-        if (token != null) {
-            
-            const expirationDate = jwtDecode<any>(token).exp * 1000
-            const currentTime = Date.now()
-
-            return expirationDate < currentTime
-        }
-
-        return true;
-    }
-
     isAuthenticated() {
 
         const token = this.getToken()
@@ -51,7 +36,6 @@ export class AuthService {
         return (token && !this.isTokenExpired())
 
     }
-
     getRole() {
 
         const token = this.getToken();
@@ -59,11 +43,28 @@ export class AuthService {
         if (token != null ) {
             const decodedToken = jwtDecode<any>(token)
 
-            return decodedToken.authorities
+            return decodedToken.authorities;
 
         } else {
             return null;
         }
+
+    }
+
+    isTokenExpired() :boolean {
+
+        const token = this.getToken()
+
+        if (token != null) {
+            const expirationDate :any = jwtDecode<any>(token).exp * 1000
+            const currentTime = Date.now()
+
+            return (expirationDate < currentTime);
+            
+        } 
+
+        return true;
+
 
     }
 
