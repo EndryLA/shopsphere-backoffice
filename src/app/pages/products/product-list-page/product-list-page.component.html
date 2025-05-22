@@ -1,0 +1,59 @@
+<p-table
+  #dt
+  [value]="products"
+  [paginator]="true"
+  [rows]="10"
+  [totalRecords]="products.length"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [rowsPerPageOptions]="[2,10, 15, 20,30,50]"
+  [globalFilterFields]="['name']"
+  [loading]="isLoading"
+>
+  <ng-template #caption>
+    <div class="flex">
+      <span class="p-input-icon-left ml-auto">
+        <p-iconfield iconPosition="left" class="ml-auto">
+         <p-inputicon>
+        <i class="pi pi-search"></i>
+        </p-inputicon>
+        <input
+          #searchInput
+          pInputText
+          type="text"
+          (input)="dt.filterGlobal(searchInput.value, 'contains')"
+          placeholder="Search keyword"
+        />
+        </p-iconfield>
+      </span>
+    </div>
+  </ng-template>
+
+  <ng-template #header>
+    <tr>
+      <th>Name</th>
+      <th>Note</th>
+      <th>Category</th>
+      <th>Spécifications</th>
+      <th>Prix</th>
+      <th>Inventaire</th>
+    </tr>
+  </ng-template>
+
+  <ng-template #body let-product >
+    <tr>
+      <td>{{ product.name }}</td>
+      <td>
+        <p-rating
+          [(ngModel)]="product.averageRating"
+          [readonly]="true"
+          class="yellow-stars">
+        </p-rating>
+
+      </td>
+      <td>{{ product.category.name }}</td>
+      <td>{{ product.mainSpecs }}</td>
+      <td>{{ product.price + "€"}}</td>
+      <td>{{ product.inventory.quantity}}</td>
+    </tr>
+  </ng-template>
+</p-table>

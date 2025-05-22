@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+body {
+    padding:0;
+    margin:0;
+}
+
+input {
+  font-size:16px;
+  padding:4px 8px 4px 40px;
+  border-radius:4px;
+  outline:none;
+  border:1px solid #ccc;
+}
+
+
+* {
+    font-family:'Inter',sans-serif;
+}
+
+ul {
+
+    padding:0;
+
+    li {
+        list-style:none
+    }
+}
+
+p {
+    margin:0;
+    padding:0;
+}
+
+h1 {
+    font-size:42px;
+    margin:0;
+}
+
+h2 {
+    font-size:32px;
+    margin:0;
+}
+
+
+h3 {
+    margin:0;
+    font-size:18px;
+}
+
+
+.filter-black {
+    filter:brightness(0);
+}
+
+$gray:#5B5D62;
